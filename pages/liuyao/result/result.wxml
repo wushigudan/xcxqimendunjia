@@ -1,0 +1,155 @@
+<!--pages/liuyao/result/result.wxml-->
+<view class="result-container">
+  <!-- 基本信息区域 -->
+  <view class="section info-section">
+    <view class="info-grid">
+      <view class="info-item">
+        <text class="label">主题：</text>
+        <text class="value">{{question}}</text>
+      </view>
+      <view class="info-item">
+        <text class="label">时间：</text>
+        <view class="value">
+          <text>{{dateTime}}</text>
+          <text class="lunar-date">{{lunarDate}}</text>
+        </view>
+      </view>
+      <view class="info-item">
+        <text class="label">干支：</text>
+        <text class="value">{{ganzhi}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 卦象信息区域 -->
+  <view class="section gua-section">
+    <!-- 基础卦象 -->
+    <view class="gua-header">
+      <text class="gua-name">{{guaName}}</text>
+      <text class="gua-ci">{{guaCi}}</text>
+    </view>
+
+    <!-- 六爻信息 -->
+    <view class="yao-list">
+      <block wx:for="{{yaoList}}" wx:key="index">
+        <view class="yao-item {{item.isChanging ? 'changing' : ''}}">
+          <view class="yao-left">
+            <text class="yao-position">{{item.position}}爻</text>
+            <image 
+              class="yao-symbol {{item.yaoType}}" 
+              src="{{item.display}}" 
+              mode="aspectFit"
+            ></image>
+          </view>
+          <view class="yao-right">
+            <text class="liuqin-text">{{item.liuQin}}</text>
+            <text class="yao-ci" wx:if="{{item.yaoCi}}">{{item.yaoCi}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <!-- 变化卦象 -->
+    <view wx:if="{{changedGuaName}}" class="changed-gua">
+      <text class="change-text">之</text>
+      <text class="changed-name">{{changedGuaName}}</text>
+    </view>
+  </view>
+
+  <!-- 神煞信息区域 -->
+  <view class="section shensha-section">
+    <view class="section-title">神煞信息</view>
+    <view class="shensha-content">{{shensha}}</view>
+  </view>
+
+  <!-- 卦象分析区域 -->
+  <view class="section interpretation-section">
+    <view class="section-title">卦象分析</view>
+    
+    <!-- 世应信息 -->
+    <view class="shiying-info">
+      <text class="info-label">世爻：</text>
+      <text class="info-value">{{['初', '二', '三', '四', '五', '上'][shiYao]}}爻</text>
+      <text class="info-label" style="margin-left: 40rpx;">应爻：</text>
+      <text class="info-value">{{['初', '二', '三', '四', '五', '上'][yingYao]}}爻</text>
+    </view>
+
+    <!-- 六亲信息 -->
+    <view class="section liuqin-section">
+      <view class="section-title">六亲关系</view>
+      
+      <!-- 六亲信息表格 -->
+      <view class="liuqin-table">
+        <view class="table-header">
+          <text class="col">位置</text>
+          <text class="col">关系</text>
+          <text class="col">状态</text>
+        </view>
+        
+        <block wx:for="{{yaoList}}" wx:key="index">
+          <view class="table-row {{item.isChanging ? 'changing' : ''}}">
+            <text class="col">{{item.position}}爻</text>
+            <text class="col">{{item.liuQin}}</text>
+            <text class="col">
+              <text wx:if="{{item.isShi}}" class="mark shi">主</text>
+              <text wx:if="{{item.isYing}}" class="mark ying">应</text>
+              <text wx:if="{{item.isChanging}}" class="mark changing">变</text>
+            </text>
+          </view>
+        </block>
+      </view>
+
+      <!-- 六亲解释说明 -->
+      <view class="liuqin-explain">
+        <view class="explain-grid">
+          <view class="explain-item">
+            <text class="item-name">兄弟</text>
+            <text class="item-desc">与日干同性，表示竞争或帮助</text>
+          </view>
+          <view class="explain-item">
+            <text class="item-name">子孙</text>
+            <text class="item-desc">生我者，表示后辈或学问</text>
+          </view>
+          <view class="explain-item">
+            <text class="item-name">妻财</text>
+            <text class="item-desc">我生者，表示财物或配偶</text>
+          </view>
+          <view class="explain-item">
+            <text class="item-name">官鬼</text>
+            <text class="item-desc">克我者，表示权威或压力</text>
+          </view>
+          <view class="explain-item">
+            <text class="item-name">父母</text>
+            <text class="item-desc">生我者，表示长辈或助力</text>
+          </view>
+          <view class="explain-item">
+            <text class="item-name">印绶</text>
+            <text class="item-desc">我克者，表示助力或保护</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 纳甲信息 -->
+    <view class="najia-info">
+      <view class="section-subtitle">纳甲信息</view>
+      <view class="najia-list">
+        <block wx:for="{{yaoList}}" wx:key="index">
+          <view class="najia-item">
+            <text class="position">{{item.position}}爻：</text>
+            <text class="ganzhi">{{item.najia.gan}}{{item.najia.zhi}}</text>
+            <text class="wuxing">({{item.wuxing}})</text>
+            <text class="relation">[{{item.relation}}]</text>
+            <text class="direction">【{{item.direction}}】</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 总体断语 -->
+    <view class="conclusion">
+      <view class="section-subtitle">总体断语</view>
+      <view class="conclusion-content">{{conclusion}}</view>
+    </view>
+  </view>
+</view>

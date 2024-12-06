@@ -1,0 +1,715 @@
+.page {
+  min-height: 100vh;
+  background-color: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 40rpx 0;
+  background: linear-gradient(180deg, #8B4513 0%, #A0522D 100%);
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #F8F0E3;
+  text-align: center;
+  display: block;
+}
+
+.content {
+  flex: 1;
+  padding: 30rpx;
+}
+
+.basic-info, .info-section, .gua-section {
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding: 30rpx;
+  border-radius: 15rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.info-row {
+  display: flex;
+  margin-bottom: 20rpx;
+  line-height: 1.6;
+}
+
+.info-label {
+  color: #333;
+  font-weight: bold;
+  min-width: 120rpx;
+}
+
+.info-value {
+  color: #666;
+  flex: 1;
+}
+
+.red-text {
+  color: #FF4D4F;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.yao-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.yao-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.yao-name {
+  color: #8B4513;
+  font-weight: bold;
+  margin-right: 20rpx;
+}
+
+.yao-property {
+  color: #666;
+  margin-right: 20rpx;
+}
+
+.yao-value {
+  color: #333;
+  flex: 1;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 40rpx;
+  padding: 0 20rpx;
+}
+
+.btn {
+  flex: 1;
+  padding: 25rpx 0;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.save-btn {
+  background: #4CAF50;
+}
+
+.interpret-btn {
+  background: #FF5722;
+}
+
+.result-container {
+  padding: 20rpx;
+  background: #f5f5f5;
+}
+
+.section {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 4rpx rgba(0,0,0,0.1);
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  padding-left: 20rpx;
+  border-left: 8rpx solid #4a90e2;
+}
+
+/* 基本信息样式 */
+.info-grid {
+  display: grid;
+  gap: 20rpx;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.label {
+  color: #666;
+  font-size: 28rpx;
+  width: 120rpx;
+  flex-shrink: 0;
+}
+
+.value {
+  color: #333;
+  font-size: 28rpx;
+  flex: 1;
+}
+
+/* 添加农历日期样式 */
+.lunar-date {
+  color: #666;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+  display: inline-block;
+  background: #f5f5f5;
+  padding: 4rpx 10rpx;
+  border-radius: 4rpx;
+}
+
+/* 卦象样式 */
+.gua-name {
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin: 20rpx 0;
+}
+
+.gua-property {
+  text-align: center;
+  color: #666;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.yao-list {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.yao-item {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0;
+}
+
+.yao-item.changing {
+  color: #e74c3c;
+}
+
+.yao-position {
+  width: 80rpx;
+  text-align: right;
+  margin-right: 20rpx;
+}
+
+.yao-symbol {
+  width: 120rpx;
+  height: 20rpx;
+  margin: 0 20rpx;
+  position: relative;
+}
+
+.yao-line {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+.yao-line.yin {
+  width: 45%;
+  box-shadow: 55rpx 0 0 0 #000;  /* 使用阴影创建第二条线 */
+}
+
+/* 动爻样式 */
+.yao-item.changing .yao-line {
+  background-color: #e74c3c;
+}
+
+.yao-item.changing .yao-line.yin {
+  box-shadow: 55rpx 0 0 0 #e74c3c;
+}
+
+.yao-left {
+  display: flex;
+  align-items: center;
+  min-width: 240rpx;
+}
+
+.changing-mark {
+  color: #e74c3c;
+  margin-left: 10rpx;
+}
+
+/* 神煞信息样式 */
+.shensha-content {
+  line-height: 1.6;
+  color: #666;
+  font-size: 28rpx;
+  padding: 10rpx;
+}
+
+/* 象区域样式 */
+.gua-section {
+  margin-top: 20rpx;
+}
+
+.gua-header {
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+.gua-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.gua-ci {
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+
+.yao-list {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.yao-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.yao-item.changing {
+  color: #e74c3c;
+}
+
+.yao-left {
+  display: flex;
+  align-items: center;
+}
+
+.yao-position {
+  width: 80rpx;
+  color: #666;
+}
+
+.yao-symbol {
+  font-family: monospace;
+  font-size: 32rpx;
+  margin: 0 20rpx;
+  color: #000;
+  font-weight: bold;
+}
+
+.yao-right {
+  flex: 1;
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+  gap: 20rpx;  /* 添加间距 */
+}
+
+.yao-ci {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.changed-gua {
+  text-align: center;
+  margin-top: 20rpx;
+  padding: 20rpx;
+}
+
+.change-text {
+  color: #666;
+  margin-right: 10rpx;
+}
+
+.changed-name {
+  color: #333;
+  font-weight: bold;
+}
+
+/* 卦象解释区域样式 */
+.interpretation-section {
+  margin-top: 20rpx;
+}
+
+.section-subtitle {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+  margin: 20rpx 0;
+  padding-left: 16rpx;
+  border-left: 4rpx solid #4a90e2;
+}
+
+.shiying-info,
+.liuqin-info,
+.najia-info {
+  background: #f8f8f8;
+  border-radius: 8rpx;
+  padding: 16rpx;
+  margin-bottom: 20rpx;
+}
+
+.liuqin-item,
+.najia-item {
+  display: flex;
+  align-items: center;
+  padding: 8rpx 0;
+}
+
+.position {
+  width: 100rpx;
+  color: #666;
+  font-size: 26rpx;
+}
+
+.relation,
+.ganzhi {
+  color: #333;
+  font-size: 26rpx;
+  margin-right: 20rpx;
+}
+
+.special-mark {
+  color: #e74c3c;
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  border: 1px solid #e74c3c;
+  padding: 0 6rpx;
+  border-radius: 4rpx;
+}
+
+.conclusion {
+  margin-top: 30rpx;
+  padding: 20rpx;
+  background: #fff;
+  border-radius: 8rpx;
+}
+
+.conclusion-content {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 六亲区域样式 */
+.liuqin-section {
+  margin-top: 20rpx;
+}
+
+.liuqin-table {
+  background: #fff;
+  border-radius: 8rpx;
+  margin-top: 16rpx;
+}
+
+.table-header,
+.table-row {
+  display: flex;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.table-header {
+  background: #f8f8f8;
+  font-weight: bold;
+}
+
+.col {
+  flex: 1;
+  text-align: center;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.table-row.changing {
+  color: #e74c3c;
+}
+
+.mark {
+  display: inline-block;
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: center;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+}
+
+.mark.shi {
+  background: #4a90e2;
+  color: #fff;
+}
+
+.mark.ying {
+  background: #f5a623;
+  color: #fff;
+}
+
+.liuqin-explain {
+  margin-top: 30rpx;
+  padding: 24rpx;
+  background: #f8f8f8;
+  border-radius: 12rpx;
+}
+
+.explain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16rpx;
+}
+
+.explain-item {
+  display: flex;
+  align-items: center;
+  padding: 16rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.05);
+}
+
+.item-name {
+  font-size: 26rpx;
+  color: #e74c3c;
+  font-weight: bold;
+  margin-right: 16rpx;
+  min-width: 80rpx;
+  text-align: justify;
+}
+
+.item-desc {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.4;
+  flex: 1;
+}
+
+/* 修改爻符号相关样式 */
+.yao-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.yao-left {
+  display: flex;
+  align-items: center;
+  width: 300rpx;  /* 固定宽度 */
+}
+
+.yao-position {
+  width: 80rpx;
+  text-align: right;
+  margin-right: 20rpx;
+  color: #666;
+  font-size: 28rpx;  /* 添加字体大小 */
+}
+
+.yao-symbol {
+  width: 120rpx;
+  height: 20rpx;
+  margin: 0 20rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.yao-line {
+  position: absolute;  /* 使用绝对定位 */
+  height: 100%;
+  background-color: #000;
+}
+
+.yao-line.yang {
+  width: 100%;
+}
+
+.yao-line.yin {
+  width: 45%;
+}
+
+.yao-line.yin::after {  /* 使用伪元素创建第二条线 */
+  content: '';
+  position: absolute;
+  right: -55rpx;
+  top: 0;
+  width: 45%;
+  height: 100%;
+  background-color: inherit;
+}
+
+/* 动爻样式 */
+.yao-item.changing .yao-line {
+  background-color: #e74c3c;
+}
+
+.yao-right {
+  flex: 1;
+  margin-left: 20rpx;
+  font-size: 28rpx;  /* 添加字体大小 */
+}
+
+.yao-ci {
+  color: #333;
+}
+
+/* 动爻样式 */
+.yao-item.changing .yao-symbol {
+  /* 使用 CSS filter 来替换黑色为红色 */
+  filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(358deg) brightness(95%) contrast(112%);
+}
+
+.yao-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.yao-item.changing .yao-symbol {
+  filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(358deg) brightness(95%) contrast(112%);
+}
+
+.yao-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.yao-ci {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.yao-explain {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.liuqin {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.yao-ci {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.najia-item {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0;
+  font-size: 28rpx;
+  line-height: 1.6;
+}
+
+.position {
+  width: 80rpx;
+  color: #666;
+}
+
+.ganzhi {
+  margin: 0 20rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.wuxing {
+  color: #4a90e2;
+  margin: 0 10rpx;
+}
+
+.relation {
+  color: #e74c3c;
+  margin: 0 10rpx;
+}
+
+.direction {
+  color: #2ecc71;
+  margin: 0 10rpx;
+}
+
+/* 爻的基础样式 */
+.yao-symbol {
+  width: 120rpx;
+  height: 20rpx;
+  margin: 0 20rpx;
+  border-radius: 4rpx;
+  box-sizing: border-box;
+}
+
+/* 老阴爻样式 */
+.yao-item.changing .yao-symbol[src*="yin"] {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* 老阳爻样式 */
+.yao-item.changing .yao-symbol[src*="yang"] {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* 爻的容器样式 */
+.yao-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.yao-left {
+  display: flex;
+  align-items: center;
+  width: 300rpx;
+}
+
+.yao-right {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+/* 添加六亲文字样式 */
+.liuqin-text {
+  min-width: 80rpx; /* 固定最小宽度 */
+  text-align: left;
+  white-space: nowrap; /* 防止文字换行 */
+  margin-right: 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.yao-right {
+  flex: 1;
+  display: flex;
+  align-items: center; /* 垂直居中对齐 */
+  margin-left: 20rpx;
+}
+
+.yao-ci {
+  flex: 1;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.4;
+}
+  

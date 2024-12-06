@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="page">
+  <!-- 整个页面容器 -->
+  <view class="header">
+    <text class="title">周易探究</text>
+  </view>
+  
+  <!-- 中间按钮区域 -->
+  <view class="content">
+    <view class="button-group">
+      <!-- 六爻排盘导航按钮 -->
+      <navigator url="/pages/liuyao/liuyao" class="btn">
+        <text>六爻排盘</text>
+      </navigator>
+      <!-- 奇门遁甲导航按钮 -->
+      <navigator url="/pages/qimen/qimen" class="btn" style="position: relative; left: 0rpx; top: -1rpx">
+        <text>奇门遁甲</text>
+      </navigator>
+    </view>
+  </view>
+
+  <!-- 底部说明区域 -->
+  <view class="info-section">
+    <view class="info-title">功能说明</view>
+    <!-- 六爻说明 -->
+    <view class="info-item">
+      <view class="info-header">六爻演绎</view>
+      <view class="info-content">六爻是中国传统文化的重要组成部分，通过对时空关系的分析，帮助理解事物发展规律。</view>
+    </view>
+    <!-- 奇门遁甲说明 -->
+    <view class="info-item">
+      <view class="info-header">奇门解析</view>
+      <view class="info-content">奇门是道家传统文化的精髓，以九宫格为基础，研究时空变化规律，展现古人智慧。</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,286 @@
+page {
+  background: #f7f8fa;
+}
+
+.result-container {
+  padding: 20rpx;
+  background-color: #ffffff;
+}
+
+/* 九宫格布局 */
+.grid-container {
+  width: 100%;
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2rpx;
+  background: #e0e0e0;
+  padding: 2rpx;
+}
+
+.grid-cell {
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+
+/* 左侧区域：八神、九星、八门 */
+.cell-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 45%;
+}
+
+/* 中间区域：空亡、值使标记 */
+.cell-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+}
+
+/* 右侧区域：天干地支 */
+.cell-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 45%;
+}
+
+/* 基础文字样式 */
+.god, .door, .star {
+  font-size: 28rpx;
+}
+
+.gan, .zhi {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+/* 标记样式 */
+.kong-mark {
+  font-size: 24rpx;
+  color: #e74c3c;
+}
+
+.ma-mark {
+  font-size: 24rpx;
+  color: #27ae60;
+}
+
+.zhi-shi-mark {
+  font-size: 24rpx;
+  color: #3498db;
+}
+
+/* 八神颜色 */
+.god-zhifu { color: #e74c3c; }    /* 值符-红色 */
+.god-tengshe { color: #2ecc71; }  /* 腾蛇-绿色 */
+.god-taiyin { color: #3498db; }   /* 太阴-蓝色 */
+.god-liuhe { color: #f1c40f; }    /* 六合-黄色 */
+.god-baihu { color: #95a5a6; }    /* 白虎-灰色 */
+.god-xuanwu { color: #9b59b6; }   /* 玄武-紫色 */
+.god-jiudi { color: #e67e22; }    /* 九地-橙色 */
+.god-jiutian { color: #34495e; }  /* 九天-深蓝色 */
+
+/* 八门颜色 */
+.door-sheng { color: #e74c3c; }   /* 生门-红色 */
+.door-xiu { color: #3498db; }     /* 休门-蓝色 */
+.door-kai { color: #2ecc71; }     /* 开门-绿色 */
+.door-jing { color: #9b59b6; }    /* 惊门-紫色 */
+.door-si { color: #95a5a6; }      /* 死门-灰色 */
+.door-du { color: #27ae60; }      /* 杜门-深绿色 */
+.door-shang { color: #f1c40f; }   /* 伤门-黄色 */
+
+/* 九星颜色 */
+.star-tianpeng { color: #2c3e50; }   /* 天蓬-深灰色 */
+.star-tianren { color: #8e44ad; }    /* 天任-紫色 */
+.star-tianchong { color: #d35400; }  /* 天冲-橙色 */
+.star-tianfu { color: #27ae60; }     /* 天辅-绿色 */
+.star-tianxin { color: #c0392b; }    /* 天心-深红色 */
+.star-tianzhu { color: #2980b9; }    /* 天柱-蓝色 */
+.star-tianying { color: #16a085; }   /* 天英-青色 */
+.star-tianrui { color: #7f8c8d; }    /* 天芮-灰色 */
+
+.liuyi-container {
+  display: flex;
+  gap: 20rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.liuyi-item {
+  font-size: 28rpx;
+  color: #666;
+  padding: 8rpx 16rpx;
+  border-radius: 4rpx;
+}
+
+.liuyi-current {
+  color: #333;
+  font-weight: bold;
+  background: #f5f5f5;
+}
+
+/* 底部信息区域 */
+.footer-section {
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  margin: 20rpx 0;
+}
+
+.info-text {
+  display: block;
+  font-size: 24rpx;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* 顶部信息样式 */
+.header {
+  background: #fff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12rpx 0;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.header-row:last-child {
+  border-bottom: none;
+}
+
+.header-label {
+  color: #666;
+  font-size: 28rpx;
+  width: 120rpx;
+}
+
+.header-value {
+  color: #333;
+  font-size: 28rpx;
+  font-weight: 500;
+  flex: 1;
+  text-align: right;
+}
+
+/* 天干地支信息样式 */
+.ganzhi-info {
+  background: #fff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.ganzhi-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #333;
+  padding: 12rpx 30rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.ganzhi-row:last-child {
+  border-bottom: none;
+}
+
+.ganzhi-row text {
+  flex: 1;
+  text-align: left;
+}
+
+.ganzhi-row text:last-child {
+  text-align: right;
+}
+
+/* 底部信息样式 */
+.footer {
+  background: #fff;
+  padding: 20rpx;
+  margin-top: 20rpx;
+  border-radius: 12rpx;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #666;
+  padding: 0 30rpx;
+}
+
+.footer-group {
+  display: flex;
+  gap: 20rpx;
+}
+
+/* 中宫文字样式与其他宫格一致 */
+.center-text {
+  font-size: 28rpx;  /* 与其他宫格字体大小一致 */
+  color: #333;
+  line-height: 1.5;
+  margin: 4rpx 0;
+}
+
+/* 确保中宫布局与其他宫格一致 */
+.center-palace {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+
+.palace-name {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 4rpx;
+}
+
+/* 十二长生样式 */
+.twelve-stage {
+  font-size: 24rpx;
+  margin-left: 4rpx;
+}
+
+.twelve-stage.auspicious {
+  color: #2ecc71;  /* 吉神用绿色 */
+}
+
+.twelve-stage.neutral {
+  color: #666;    /* 平神用灰色 */
+}
+
+.twelve-stage.inauspicious {
+  color: #e74c3c;  /* 凶神用红色 */
+}
+
+/* 地支和十二长生的组合样式 */
+.zhi-group {
+  display: flex;
+  align-items: center;
+  gap: 4rpx;  /* 地支和十二长生之间的间距 */
+}
+
+.twelve-stage {
+  font-size: 24rpx;
+  color: #666;
+}

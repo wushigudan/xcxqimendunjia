@@ -1,0 +1,128 @@
+/* 页面容器 */
+page {
+  background-color: #f7e8d0;  /* 米黄色背景 */
+}
+
+.container {
+  min-height: 100vh;
+  background: #F5E6CA;
+  padding-top: 100rpx;
+}
+
+/* 顶部标题栏 */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: #8B4513;
+  padding: 30rpx 0;
+  text-align: center;
+}
+
+.header text {
+  color: #fff;
+  font-size: 36rpx;
+}
+
+/* 内容区域 */
+.content {
+  width: 80%;
+  margin: 30rpx auto;
+  padding: 30rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  box-shadow: 0 4rpx 12rpx rgba(139, 69, 19, 0.2);
+  color: #333;
+}
+
+/* 表单项样式 */
+.form-item {
+  margin-bottom: 40rpx;
+}
+
+.form-label {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+/* 选择器样式 */
+.picker-box {
+  background: #F5E6CA;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  color: #8B4513;
+}
+
+/* 时间显示样式 */
+.picker-box text {
+  display: inline-block;
+  font-size: 32rpx;
+  color: #8B4513;
+  letter-spacing: 2rpx;  /* 增加字间距 */
+}
+
+/* 按钮样式 */
+.submit-btn {
+  width: 100%;
+  margin: 15rpx auto;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #8B4513;
+  color: #fff;
+  font-size: 34rpx;
+  border-radius: 12rpx;
+  text-align: center;
+  box-shadow: 0 4rpx 12rpx rgba(139, 69, 19, 0.2);
+}
+
+.submit-btn:active {
+  background: #6b3410;
+}
+
+/* 说明文本样式 */
+.desc-text {
+  width: 80%;
+  margin: 15rpx auto;
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #8B4513;
+  line-height: 1.6;
+  text-align: left;
+  background: rgba(139, 69, 19, 0.05);
+  border-radius: 8rpx;
+}
+
+.desc-intro {
+  margin-bottom: 15rpx;
+  color: #8B4513;
+  opacity: 0.8;
+}
+
+.desc-item {
+  margin-bottom: 8rpx;
+  color: #8B4513;
+}
+
+.desc-symbol {
+  color: #8B4513;
+  margin-right: 10rpx;
+}
+
+/* 按钮组样式 */
+.button-group {
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20rpx;
+}
+
+/* 按钮内容样式 */
+.btn-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 

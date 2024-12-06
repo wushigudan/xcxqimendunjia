@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/liuyao/liuyao",
+    "pages/liuyao/result/result",
+    "pages/qimen/qimen",
+    "pages/qimen/result/result"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "周易探究",
+    "navigationBarTextStyle": "black"
+  }
+}

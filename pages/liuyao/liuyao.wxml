@@ -1,0 +1,42 @@
+<view class="page">
+  <view class="header">
+    <text class="title">数理推导</text>
+  </view>
+  
+  <view class="content">
+    <view class="input-section">
+      <view class="input-item">
+        <text class="required">研究主题：</text>
+        <input placeholder="请输入您要研究的具体主题" bindinput="onQuestionInput"/>
+      </view>
+
+      <picker bindchange="onMethodChange" value="{{methodIndex}}" range="{{methods}}">
+        <view class="picker-item">
+          <text>计算方式：</text>
+          <text>{{methods[methodIndex] || '请选择'}}</text>
+        </view>
+      </picker>
+
+      <block wx:if="{{methodIndex == 1}}">
+        <view class="input-item">
+          <text>参考数值：</text>
+          <input 
+            type="number" 
+            placeholder="请输入3-5位数值" 
+            bindinput="onNumberInput"
+            value="{{inputNumber}}"
+          />
+        </view>
+        <view class="number-tips">
+          <text class="tips-text">提示：建议输入3-5位数值</text>
+        </view>
+      </block>
+    </view>
+
+    <view class="operation-section">
+      <button class="submit-btn" bindtap="onSubmit">开始计算</button>
+    </view>
+  </view>
+
+  <rui-datepicker id="ruiDatepicker" bind:confirm="dateConfirm"></rui-datepicker>
+</view> 

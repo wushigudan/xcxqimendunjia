@@ -1,0 +1,100 @@
+<view class="result-container">
+  <!-- 顶部信息 -->
+  <view class="header">
+    <view class="header-row">
+      <text class="header-label">盘式</text>
+      <text class="header-value">{{type === 'rotating' ? '转盘' : '飞盘'}}</text>
+    </view>
+    <view class="header-row">
+      <text class="header-label">日期</text>
+      <text class="header-value">{{dateTimeStr || '时间数据不完整'}}</text>
+    </view>
+  </view>
+
+  <!-- 干支信息 -->
+  <view class="ganzhi-info">
+    <view class="ganzhi-row">
+      <text>年干支：{{ganzhi.year.gan}}{{ganzhi.year.zhi}}</text>
+      <text>月干支：{{ganzhi.month.gan}}{{ganzhi.month.zhi}}</text>
+    </view>
+    <view class="ganzhi-row">
+      <text>日干支：{{ganzhi.day.gan}}{{ganzhi.day.zhi}}</text>
+      <text>时干支：{{ganzhi.hour.gan}}{{ganzhi.hour.zhi}}</text>
+    </view>
+  </view>
+
+  <!-- 九宫格布局 -->
+  <view class="grid-container">
+    <view class="grid-cell" wx:for="{{palaceInfo}}" wx:key="position">
+      <block wx:if="{{item.position === 5}}">
+        <view class="center-palace">
+          <!-- 转盘中宫显示六仪 -->
+          <block wx:if="{{type === 'rotating'}}">
+            <view class="liuyi-container">
+              <block wx:for="{{item.liuyi.values}}" wx:for-item="liuyi" wx:key="*this">
+                <text class="liuyi-item {{liuyi === item.liuyi.current ? 'liuyi-current' : ''}}">{{liuyi}}</text>
+              </block>
+            </view>
+          </block>
+          <!-- 飞盘中宫显示完整内容 -->
+          <block wx:else>
+            <view class="cell-left">
+              <text class="{{item.godClass}}">{{item.god}}</text>
+              <text class="{{item.doorClass}}">{{item.door}}</text>
+              <text wx:if="{{item.star}}" class="{{item.starClass}}">{{item.star}}</text>
+            </view>
+            
+            <view class="cell-center">
+              <text class="center-text">中宫</text>
+              <text wx:if="{{item.isKong}}" class="kong-mark">○</text>
+              <text wx:if="{{item.isZhiShi}}" class="zhi-shi-mark">使</text>
+            </view>
+            
+            <view class="cell-right">
+              <text class="gan">{{item.tianPan}}</text>
+              <view class="zhi-group">
+                <text class="zhi">{{item.diPan}}</text>
+                <text class="twelve-stage {{item.twelveStage.property}}">{{item.twelveStage.name}}</text>
+              </view>
+            </view>
+          </block>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="cell-left">
+          <text class="palace-name">{{item.palaceName}}</text>
+          <text class="{{item.godClass}}">{{item.god}}</text>
+          <text class="{{item.doorClass}}">{{item.door}}</text>
+          <text wx:if="{{item.star}}" class="{{item.starClass}}">{{item.star}}</text>
+        </view>
+        
+        <view class="cell-center">
+          <text wx:if="{{item.isKong}}" class="kong-mark">○</text>
+          <text wx:if="{{item.isZhiShi}}" class="zhi-shi-mark">使</text>
+        </view>
+        
+        <view class="cell-right">
+          <text class="gan">{{item.tianPan}}</text>
+          <view class="zhi-group">
+            <text class="zhi">{{item.diPan}}</text>
+            <text class="twelve-stage {{item.twelveStage.property}}">{{item.twelveStage.name}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 底部空亡马星信息 -->
+  <view class="footer">
+    <view class="footer-row">
+      <view class="footer-group">
+        <text>日空：{{kongWang.day.kong}}</text>
+        <text>日马：{{kongWang.day.ma}}</text>
+      </view>
+      <view class="footer-group">
+        <text>时空：{{kongWang.hour.kong}}</text>
+        <text>时马：{{kongWang.hour.ma}}</text>
+      </view>
+    </view>
+  </view>
+</view> 

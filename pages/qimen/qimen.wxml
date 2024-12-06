@@ -1,0 +1,61 @@
+<view class="container">
+  <view class="header">
+    <text>奇门推演</text>
+  </view>
+
+  <view class="content">
+    <!-- 推演时间 -->
+    <view class="form-item">
+      <view class="form-label">参考时间</view>
+      <picker mode="multiSelector" 
+             bindchange="bindDateTimeChange"
+             bindcolumnchange="bindDateTimeColumnChange"
+             value="{{dateTimeIndex}}" 
+             range="{{dateTimeArray}}">
+        <view class="picker-box {{isLoading ? 'disabled' : ''}}">
+          <text>{{dateTimeArray[0][dateTimeIndex[0]]}}年{{dateTimeArray[1][dateTimeIndex[1]]}}月{{dateTimeArray[2][dateTimeIndex[2]]}}日{{dateTimeArray[3][dateTimeIndex[3]]}}时{{dateTimeArray[4][dateTimeIndex[4]]}}分</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 推演方式 -->
+    <view class="form-item">
+      <view class="form-label">分析模式</view>
+      <picker class="type-picker" 
+              mode="selector" 
+              range="{{typeOptions}}" 
+              range-key="label"
+              value="{{type}}" 
+              bindchange="bindTypeChange"
+              disabled="{{isLoading}}">
+        <view class="picker-box {{isLoading ? 'disabled' : ''}}">
+          <text>{{type === 'rotating' ? '转盘' : '飞盘'}}</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <!-- 按钮区域 -->
+  <view class="button-group">
+    <button class="submit-btn {{isLoading ? 'loading' : ''}}" 
+            bindtap="calculate" 
+            disabled="{{isLoading}}">
+      <view class="btn-content">
+        <view class="loading-icon" wx:if="{{isLoading}}"></view>
+        <text>{{isLoading ? '分析中...' : '开始分析'}}</text>
+      </view>
+    </button>
+    
+    <button class="reset-btn" 
+            bindtap="reset" 
+            disabled="{{isLoading}}">
+      <!-- 重置暂时不显示  -->
+    </button>
+  </view>
+
+  <!-- 上次计算结果提示 -->
+  <view class="last-calc" wx:if="{{lastCalculation}}">
+    <text class="last-calc-title">上次分析：</text>
+    <text class="last-calc-time">{{lastCalculation.ganzhiText}}</text>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "奇门遁甲",
+  "navigationBarBackgroundColor": "#8B4513",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#F5E6CA",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": false,
+  "usingComponents": {}
+}
